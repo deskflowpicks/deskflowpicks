@@ -118,6 +118,23 @@
 			max-width: 440px;
 		}
 
+		.profile-image {
+			border-radius: 50%;
+			height: 80px;
+			margin-bottom: 24px;
+			overflow: hidden;
+			width: 80px;
+		}
+
+		.profile-image img {
+		display: block;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		transform: scale(1.15);
+		width: 100%;
+		}
+
 		.hero-link {
 			align-items: center;
 			border-bottom: 2px solid var(--ink);
@@ -259,6 +276,7 @@
 		<main id="top">
 			<section class="hero" id="about">
 				<div>
+					<div class="profile-image"><img src="images/me.jpg" alt="Richard Agor"></div>
 					<p class="eyebrow">Independent designer / developer</p>
 					<h1>Ideas made <em>visible.</em></h1>
 					<p class="hero-copy">I create distinctive digital experiences for people and teams doing meaningful work.</p>
