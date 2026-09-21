@@ -42,10 +42,6 @@
 			border-bottom: 1px solid var(--line);
 			display: flex;
 			justify-content: space-between;
-			position: sticky;
-			top: 0;
-			z-index: 10;
-			background: var(--paper);
 			padding: 28px 0;
 		}
 
@@ -206,26 +202,6 @@
 		footer p, footer a { color: var(--muted); font-size: .78rem; }
 		.socials { display: flex; gap: 22px; }
 
-		.scroll-top {
-			background: var(--ink);
-			border: 0;
-			bottom: 24px;
-			color: white;
-			cursor: pointer;
-			font: 700 .8rem "DM Sans", sans-serif;
-			opacity: 0;
-			padding: 13px 16px;
-			pointer-events: none;
-			position: fixed;
-			right: 24px;
-			transform: translateY(12px);
-			transition: opacity .2s ease, transform .2s ease, background .2s ease;
-			z-index: 20;
-		}
-
-		.scroll-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-		.scroll-top:hover, .scroll-top:focus-visible { background: var(--blue); }
-
 		@media (max-width: 700px) {
 			.page-shell { padding: 0 22px; }
 			header { padding: 21px 0; }
@@ -309,17 +285,5 @@
 			<div class="socials"><a href="#contact">Instagram</a><a href="#contact">LinkedIn</a><a href="#top">Back to top ↑</a></div>
 		</footer>
 	</div>
-	<button class="scroll-top" type="button" aria-label="Scroll back to top">Back to top ↑</button>
-	<script>
-		const scrollTopButton = document.querySelector(".scroll-top");
-
-		const updateScrollTopButton = () => {
-			scrollTopButton.classList.toggle("visible", window.scrollY > 80);
-		};
-
-		window.addEventListener("scroll", updateScrollTopButton, { passive: true });
-		scrollTopButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-		updateScrollTopButton();
-	</script>
 </body>
 </html>
